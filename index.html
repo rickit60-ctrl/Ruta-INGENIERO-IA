@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Ruta personal de Rickis para convertirse en Applied AI Engineer en 8 meses." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Ruta Applied AI Engineer</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">AI</span>
+      <div><strong>Applied AI Engineer</strong><small>Ruta personal · 8 meses</small></div>
+    </div>
+    <button id="themeBtn" class="icon-btn" aria-label="Cambiar tema">☾</button>
+  </header>
+
+  <main id="app">
+    <section id="inicio" class="view active" aria-labelledby="inicio-title">
+      <div class="hero-card">
+        <div>
+          <span class="eyebrow">OBJETIVO PROFESIONAL</span>
+          <h1 id="inicio-title">De Soporte TI a<br><span>Applied AI Engineer</span></h1>
+          <p>Python, datos, cloud, agentes y arquitectura convertidos en proyectos que puedas explicar y defender.</p>
+        </div>
+        <div class="progress-orbit" aria-label="Progreso total">
+          <svg viewBox="0 0 120 120" role="img">
+            <circle class="orbit-bg" cx="60" cy="60" r="48" />
+            <circle id="orbit" class="orbit-value" cx="60" cy="60" r="48" />
+          </svg>
+          <div><strong id="totalPercent">0%</strong><span>completado</span></div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <article><span>Tareas</span><strong id="doneCount">0/39</strong><small>competencias técnicas</small></article>
+        <article><span>Mes actual</span><strong id="currentMonth">1</strong><small id="monthRange">Ago–Sep 2026</small></article>
+        <article><span>Racha</span><strong id="streak">0 días</strong><small>actividad reciente</small></article>
+      </div>
+
+      <section class="section-block">
+        <div class="section-heading"><div><span class="eyebrow">AHORA</span><h2>Siguiente enfoque</h2></div><button class="text-btn" data-go="ruta">Ver ruta →</button></div>
+        <div id="nextTask" class="next-card"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading"><div><span class="eyebrow">MAPA</span><h2>Los 8 meses</h2></div></div>
+        <div id="monthStrip" class="month-strip"></div>
+      </section>
+    </section>
+
+    <section id="ruta" class="view" aria-labelledby="ruta-title">
+      <div class="page-heading"><span class="eyebrow">PLAN TÉCNICO</span><h1 id="ruta-title">Tu ruta, paso a paso</h1><p>Marca una competencia cuando puedas demostrarla sin depender de una solución completa de IA.</p></div>
+      <div id="monthFilters" class="filter-scroll" aria-label="Filtrar por mes"></div>
+      <div id="taskList" class="task-list"></div>
+    </section>
+
+    <section id="certificaciones" class="view" aria-labelledby="cert-title">
+      <div class="page-heading"><span class="eyebrow">CREDENCIALES</span><h1 id="cert-title">Certificaciones</h1><p>La prioridad es construir proyectos. Las certificaciones respaldan la competencia, no la sustituyen.</p></div>
+      <div class="callout"><strong>Meta núcleo</strong><span>AZ-900 → GitHub Foundations → AI-901 → AI-103</span></div>
+      <div id="certList" class="cert-list"></div>
+    </section>
+
+    <section id="registro" class="view" aria-labelledby="registro-title">
+      <div class="page-heading"><span class="eyebrow">BITÁCORA</span><h1 id="registro-title">Registra tu sesión</h1><p>La constancia gana. Anota incluso una sesión corta.</p></div>
+      <form id="logForm" class="log-form">
+        <label>Fecha<input id="logDate" type="date" required /></label>
+        <label>Área<select id="logArea"><option>Programación</option><option>Inglés</option><option>Proyecto</option><option>Certificación</option></select></label>
+        <label>Minutos<input id="logMinutes" type="number" min="5" max="600" value="30" required /></label>
+        <label>Qué aprendiste<textarea id="logNote" rows="3" placeholder="Ej.: Practiqué funciones y return en Python"></textarea></label>
+        <button class="primary-btn" type="submit">Guardar sesión</button>
+      </form>
+      <div class="section-heading log-title"><div><span class="eyebrow">HISTORIAL</span><h2>Sesiones recientes</h2></div><button id="clearLogs" class="text-btn danger">Limpiar</button></div>
+      <div id="logList" class="log-list"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación principal">
+    <button class="nav-btn active" data-view="inicio"><span>⌂</span>Inicio</button>
+    <button class="nav-btn" data-view="ruta"><span>◫</span>Ruta</button>
+    <button class="nav-btn" data-view="certificaciones"><span>◇</span>Certificaciones</button>
+    <button class="nav-btn" data-view="registro"><span>＋</span>Registro</button>
+  </nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
